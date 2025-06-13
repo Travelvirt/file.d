@@ -1,32 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>file.d documentation</title>
-  <link rel="icon" type="image/png" href="/file.d/static/file.d.png" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="A blazing fast tool for building data pipelines: read, process, and output events.">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock the World from Your Living Room - [Your Business Name]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Typography */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            padding-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh; /* Adjust as needed */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: white; /* Ensure heading is white */
+        }
+
+        .hero-content p {
+            font-size: 1.3em;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .hero-tagline {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #ffe082; /* Highlight color for tagline */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #FF5733; /* Orange-Red for primary actions */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e64a27;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #3366FF; /* Blue for secondary actions */
+        }
+
+        .btn-secondary:hover {
+            background-color: #2a52cc;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .benefit-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item h3 {
+            color: #3498db; /* A blue color for benefit titles */
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* Tours Section */
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .tour-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tour-card-content {
+            padding: 20px;
+        }
+
+        .tour-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4em;
+            text-align: left;
+        }
+
+        .tour-card p {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* How It Works */
+        .how-it-works-steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .step .icon {
+            font-size: 3em;
+            color: #2ecc71; /* Green for steps */
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #3498db;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .hero-content h1 {
+                font-size: 2.8em;
+            }
+            .hero-content p {
+                font-size: 1.1em;
+            }
+            .hero-tagline {
+                font-size: 1.5em;
+            }
+            .benefits-grid, .tours-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .how-it-works-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .hero-content h1 {
+                font-size: 2em;
+            }
+            .hero-content p {
+                font-size: 1em;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'file.d',
-      repo: 'https://github.com/ozontech/file.d',
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 2,
-      maxLevel: 1,
-      coverpage: true,
-      auto2top: true,
-      markdown: {
-        gfm: true
-      }
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/docsify-copy-code"></script>
+
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="hero-video-placeholder.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Unlock the World from Your Living Room with [Your Business Name]!</h1>
+            <p>Dreaming of epic adventures without the hassle? [Your Business Name] transforms your home into a portal to the globe.</p>
+            <p class="hero-tagline">Your Passport to Global Adventures. No Flights. No Limits.</p>
+            <a href="[Link to your tour catalog/booking page]" class="btn">🚀 EXPLORE ALL VIRTUAL TOURS NOW! 🚀</a>
+        </div>
+    </header>
+
+    <section id="benefits">
+        <div class="container">
+            <h2>Why [Your Business Name] is Your Ultimate Travel Companion:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Experience Unforgettable Immersion</h3>
+                    <p>Forget flat screens. Our state-of-the-art 360° virtual tours, interactive guides, and captivating live-streamed events transport you directly to the heart of each destination. <strong>Feel the atmosphere, hear the sounds, and see every detail as if you were truly there.</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Access the World, Effortlessly</h3>
+                    <p>Explore iconic landmarks, ancient streets, and wild beauty without visas, jet lag, or queues – just pure exploration at your fingertips. <strong>Visit Rome, Jerusalem, Nigeria, Namibia, USA, Canada, and beyond!</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Travel Smarter, Not Harder (or Pricier!)</h3>
+                    <p>Say goodbye to exorbitant airfares, pricey hotels, and unexpected travel costs. <strong>Enjoy premium global experiences at a fraction of the cost, making world travel accessible to everyone, right from Lagos.</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Your Journey, Your Way</h3>
+                    <p>Our virtual tours are available 24/7. <strong>Explore at your own pace, pause when you need a break, and revisit your favorite spots anytime.</strong> Perfect for families, solo adventurers, or those seeking a flexible way to see the world.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Travel with Purpose, Travel Sustainably</h3>
+                    <p>Experience the world without leaving a carbon footprint. <strong>Contribute to a greener planet by choosing eco-conscious exploration.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tours">
+        <div class="container">
+            <h2>Your Passport to Incredible Destinations Awaits!</h2>
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <img src="rome-tour-image.jpg" alt="Ancient Wonders of Rome">
+                    <div class="tour-card-content">
+                        <h3>Ancient Wonders of Rome</h3>
+                        <p>Step back in time! Explore the magnificent Colosseum, wander through the historic Roman Forum, and marvel at the Pantheon with our expert virtual guide.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="jerusalem-tour-image.jpg" alt="Spiritual Journey in Jerusalem">
+                    <div class="tour-card-content">
+                        <h3>Spiritual Journey in Jerusalem</h3>
+                        <p>Discover the profound history and sacred sites of Jerusalem. Walk through the Old City, visit the Western Wall, and explore the Dome of the Rock.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="nigeria-tour-image.jpg" alt="Discover Diverse Nigeria">
+                    <div class="tour-card-content">
+                        <h3>Discover Diverse Nigeria</h3>
+                        <p>From the vibrant markets of Lagos to the ancient city of Kano and the stunning landscapes of Obudu Mountain Resort, experience the rich culture and breathtaking beauty of Nigeria.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="namibia-tour-image.jpg" alt="Wild Majesty of Namibia">
+                    <div class="tour-card-content">
+                        <h3>Wild Majesty of Namibia</h3>
+                        <p>Witness the towering red dunes of Sossusvlei, encounter unique desert-adapted wildlife, and explore the stark beauty of the Skeleton Coast.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="usa-canada-tour-image.jpg" alt="USA & Canada Highlights">
+                    <div class="tour-card-content">
+                        <h3>USA & Canada Highlights</h3>
+                        <p>From the bright lights of New York City's Times Square to the awe-inspiring Canadian Rockies, explore iconic landmarks and natural wonders across North America.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="[Link to your tour catalog/booking page]" class="btn btn-secondary">SEE ALL DESTINATIONS</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How to Begin Your Virtual Journey:</h2>
+            <div class="how-it-works-steps">
+                <div class="step">
+                    <div class="icon">🔍</div>
+                    <h3>1. Select Your Destination</h3>
+                    <p>Browse our extensive library of immersive 360° virtual tours and live experiences.</p>
+                </div>
+                <div class="step">
+                    <div class="icon">✨</div>
+                    <h3>2. Choose Your Adventure</h3>
+                    <p>Pick the journey that sparks your imagination and fits your schedule.</p>
+                </div>
+                <div class="step">
+                    <div class="icon">✈️</div>
+                    <h3>3. Click & Explore</h3>
+                    <p>Instantly access your chosen tour and begin your unforgettable virtual expedition from anywhere in the world!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Hear From Our Happy Explorers!</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"I've always dreamed of visiting Jerusalem, and [Your Business Name] made it possible from my living room! The tour was incredibly detailed and moving."</p>
+                    <div class="testimonial-author">– Aisha R., Lagos</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"My family had an amazing time exploring the Canadian Rockies virtually. It felt so real, and we learned so much about the wildlife!"</p>
+                    <div class="testimonial-author">– Chike O., Abuja</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finally, an affordable way to see the world! The Nigeria tour was fantastic, showcasing so many places I want to visit in person someday."</p>
+                    <div class="testimonial-author">– Fatima D., Kano</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-final" style="background-color: #2ecc71; color: white; text-align: center;">
+        <div class="container">
+            <h2>Your Global Adventure Starts Here.</h2>
+            <p style="font-size: 1.3em;">Don't wait! The world is waiting to be explored.</p>
+            <a href="[Link to your tour catalog/booking page]" class="btn" style="background-color: #fff; color: #2ecc71; padding: 20px 40px; font-size: 1.4em; border-radius: 8px;">
+                ⭐ BEGIN YOUR VIRTUAL TRAVEL EXPERIENCE TODAY! ⭐
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>[Your Business Name] | [Your Website] | [Your Email] | [Your Phone Number - Optional]</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/yourbusiness" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/yourbusiness" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/yourbusiness" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+                <a href="https://twitter.com/yourbusiness" target="_blank"><img src="x-icon.png" alt="X (Twitter)"></a>
+                <a href="https://www.pinterest.com/yourbusiness" target="_blank"><img src="pinterest-icon.png" alt="Pinterest"></a>
+                </div>
+            <p>&copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
